@@ -3,24 +3,46 @@ body {
   font-family: Arial, sans-serif;
 }
 header {
-  background-color: #ffffff;
+  background-color: #9f815f;
   flex-direction: column;
   color: rgb(0, 0, 0);
-  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
   top: 0;
+  flex-shrink: 0;
   width: 100%;
   z-index: 1000;
   transition: all 0.3s;
 }
-.logo {
-  font-size: 60px;
-  font-weight: bold;
+.title {
+  color: #fff;
+  font-family: 'Just Another Hand', sans-serif;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
   text-transform: uppercase;
-  transition: all 0.3s;
+}
+.subtitle {
+  color: #fff;
+  font-family: 'Just Another Hand', sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+.logo-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.logo {
+  border-radius: 200px;
+  width: 95px;
+  height: 95px;
 }
 nav ul {
   list-style-type: none;
@@ -33,10 +55,15 @@ nav ul li {
   position: relative;
 }
 nav ul li a {
-  color: rgb(0, 0, 0);
-  font-size: 36px;
+  color: #000;
+  font-family: 'Inter', light;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
   text-decoration: none;
   position: relative;
+  width: 71px;
 }
 nav ul li a:hover:after {
   content: '';
@@ -56,6 +83,25 @@ nav ul li a:hover:after {
     width: 100%;
   }
 }
+.tortas {
+  padding: 10px;
+  background: #9f815f;
+  margin-top: -5px;
+  box-shadow: 0px 50px 100px 5px rgba(0, 0, 0, 0.2) inset;
+}
+.tortasContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tortasContainer img {
+  border-radius: 30px;
+  margin: 10px;
+  height: 300px;
+}
+
 main {
   text-align: center;
   margin-top: 120px;
