@@ -2,6 +2,14 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
 }
+main {
+  text-align: center;
+  margin-top: 120px;
+}
+.clsImagen img {
+  width: 100%;
+  min-width: 100%;
+}
 header {
   background-color: #9f815f;
   flex-direction: column;
@@ -95,21 +103,152 @@ nav ul li a:hover:after {
   justify-content: space-around;
   align-items: center;
 }
-
 .tortasContainer img {
   border-radius: 30px;
   margin: 10px;
   height: 300px;
 }
 
-main {
-  text-align: center;
-  margin-top: 120px;
+.aboutme {
+  margin: 0 auto;
+  padding: 2rem;
+  padding-top: 5px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background: rgba(159, 129, 95, 0.77);
 }
-.clsImagen img {
+
+.aboutmeblock {
+  padding: 0 20%;
+  display: flex;
+  margin-left: 20px;
+  margin-right: 50px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.aboutmetxt {
+  text-align: center;
+  font-family: 'Inter', light;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  color: #fff;
+  line-height: 160%; /* 32px */
+  text-transform: uppercase;
+  flex: 1 0 45%;
+  margin-bottom: 2rem;
+}
+
+.aboutme img {
   max-width: 100%;
+  object-fit: cover;
+  margin-bottom: 2rem;
+  height: 350px;
+  border-radius: 30px;
+  border: 4px solid #000;
+  background: lightgray -0.841px -0.842px / 100.504% 100.202% no-repeat;
+  box-shadow: 4px 4px 34.1px -3px rgba(0, 0, 0, 0.25);
+}
+
+.contact {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background: #e3b684;
+  display: flex;
+  height: 100vh;
+}
+
+.maps-container {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.maps {
+  align-items: left;
+  width: 100%;
+  height: 100%;
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+.name label {
+  color: #fff;
+  font-family: 'Inter', light;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.name input {
+  border-radius: 10px;
+  border: 2px solid #fff;
+  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+.message {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin-top: 20px;
+}
+.message label {
+  color: #fff;
+  font-family: 'Inter', light;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+}
+.message textarea {
+  border-radius: 10px;
+  border: 2px solid #fff;
+  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.whatsappbutton {
+  color: #fff;
+  text-align: center;
+  font-family: 'Inter', light;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #5fa661;
+  box-shadow: 0px 0px 8px 0px #63513e;
+}
+
+.form-container {
+  display: flex;
+  height: 100%;
+  padding: 20px;
+}
+.form-content {
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+  padding-right: 20px;
 }
 footer {
-  margin-top: 20px;
-  text-align: center;
+  background: #9f815f;
+  background-color: #9f815f;
+  padding: 20px;
+}
+
+footer p {
+  color: #fff;
+  font-family: 'Inter', light;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
