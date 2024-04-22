@@ -116,11 +116,10 @@
                   >Car GPS</a
                 ></iframe
               >
-              <p>Belgrano 749, Tigre</p>
             </div>
           </div>
           <div class="form-content">
-            <h2 class="subtitle">¿Quien soy?</h2>
+            <h2 class="subtitle">Escribime</h2>
             <form>
               <div class="name">
                 <label for="name">Nombre</label>
@@ -130,17 +129,53 @@
                 <label for="message">Mensaje</label>
                 <textarea id="message" name="message"></textarea>
               </div>
-              <button class="whatsappbutton">Ir a WhatsApp</button>
+              <div class="button-container">
+                <a
+                  onclick="enviarMensajeWhatsApp()"
+                  class="whatsappbutton"
+                  href="#"
+                  target="_blank"
+                >
+                  <span>Ir a WhatsApp</span>
+                </a>
+              </div>
             </form>
           </div>
         </div>
       </section>
     </main>
+
     <footer class="footer">
       <p>Todos los derechos reservados &copy; Carolina Benedet 2024.</p>
+      <div class="social-icons">
+        <a href="https://wa.me/541163507783" target="_blank"
+          ><img src="img/whatsapp.png" alt="WhatsApp" /> </a
+        ><a href="https://www.facebook.com/carobenedet/" target="_blank"
+          ><img src="img/facebook.png" alt="Facebook"
+        /></a>
+        <a href="https://www.instagram.com/carolinabenedet/" target="_blank"
+          ><img src="img/instagram.png" alt="Instagram"
+        /></a>
+      </div>
     </footer>
 
     <script>
+      function enviarMensajeWhatsApp() {
+        var name = document.getElementById('name').value;
+        var message = document.getElementById('message').value;
+
+        var messageCodified = encodeURIComponent(message);
+
+        var enlaceWhatsApp =
+          'https://wa.me/541163507783?text=' +
+          'Hola Carolina, soy ' +
+          name +
+          '. Mensaje: ' +
+          messageCodified;
+
+        window.open(enlaceWhatsApp, '_blank');
+      }
+
       window.onscroll = function () {
         scrollFunction();
       };
