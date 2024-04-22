@@ -276,3 +276,19 @@ footer p {
 .social-icons img {
   height: 50px;
 }
+
+/* Estilos para dispositivos de escritorio */
+.imagen-desktop {
+  display: block;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+  .clsImagen {
+    content: url('img/MobilePic.jpg'); /* Cambia la imagen en dispositivos móviles */
+  }
+
+  .imagen-desktop {
+    display: none; /* Oculta la imagen en dispositivos móviles */
+  }
+}
