@@ -34,7 +34,7 @@ header {
   text-transform: uppercase;
 }
 .subtitle {
-  color: #fff;
+  color: #000000;
   font-family: 'Just Another Hand', sans-serif;
   font-size: 40px;
   font-style: normal;
@@ -97,59 +97,54 @@ nav ul li a:hover:after {
   margin-top: -5px;
   box-shadow: 0px 50px 100px 5px rgba(0, 0, 0, 0.2) inset;
 }
-.tortasContainer {
+.tortascontainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
 }
-.tortasContainer img {
+.tortascontainer img {
   border-radius: 30px;
   margin: 10px;
   height: 300px;
 }
-
 .aboutme {
-  margin: 0 auto;
-  padding: 2rem;
-  padding-top: 5px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   background: rgba(159, 129, 95, 0.77);
-}
-
-.aboutmeblock {
-  padding: 0 20%;
   display: flex;
-  margin-left: 20px;
-  margin-right: 50px;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
 }
-
+.aboutmeimgcontainer {
+  flex: 1 0 45%;
+}
 .aboutmetxt {
   text-align: center;
   font-family: 'Inter', light;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 300;
-  color: #fff;
-  line-height: 160%; /* 32px */
   text-transform: uppercase;
-  flex: 1 0 45%;
-  margin-bottom: 2rem;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 160%;
 }
-
+.aboutmetxt1 {
+  margin-left: 100px;
+  margin-right: 70px;
+}
+.aboutmetxt2 {
+  flex: 1 0 45%;
+  margin-left: 90px;
+  margin-right: 90px;
+}
 .aboutme img {
   max-width: 100%;
-  object-fit: cover;
-  margin-bottom: 2rem;
   height: 350px;
-  border-radius: 30px;
-  border: 4px solid #000;
-  background: lightgray -0.841px -0.842px / 100.504% 100.202% no-repeat;
-  box-shadow: 4px 4px 34.1px -3px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  object-fit: cover;
+  margin-top: 20px;
+  margin-right: 100px;
 }
 
 .contact {
@@ -158,19 +153,17 @@ nav ul li a:hover:after {
   display: flex;
   height: 100vh;
 }
-
 .maps-container {
+  margin-top: 50px;
   width: 50%;
   height: 100%;
   overflow: hidden;
 }
-
 .maps {
   align-items: left;
   width: 100%;
   height: 100%;
 }
-
 .name {
   display: flex;
   flex-direction: column;
