@@ -277,18 +277,21 @@ footer p {
   height: 50px;
 }
 
-/* Estilos para dispositivos de escritorio */
 .imagen-desktop {
   display: block;
 }
+.imagen-mobile {
+  display: none;
+}
 
-/* Estilos para dispositivos móviles */
 @media (max-width: 768px) {
-  .clsImagen {
-    content: url('img/MobilePic.jpg'); /* Cambia la imagen en dispositivos móviles */
+  /* Ocultar imagen de escritorio en dispositivos móviles */
+  .imagen-desktop {
+    display: none;
   }
 
-  .imagen-desktop {
-    display: none; /* Oculta la imagen en dispositivos móviles */
+  /* Mostrar imagen móvil en dispositivos móviles */
+  .imagen-mobile {
+    display: block;
   }
 }
