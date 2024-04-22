@@ -349,4 +349,19 @@ footer p {
   .form-content {
     width: auto;
   }
+  header {
+    height: 80px;
+  }
+  main {
+    margin-top: auto;
+  }
+  .social-icons {
+    margin-right: 0;
+  }
+  .social-icons a {
+    padding-right: 10px;
+  }
+  .social-icons img {
+    height: 30px;
+  }
 }
