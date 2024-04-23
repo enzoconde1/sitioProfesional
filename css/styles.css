@@ -256,15 +256,16 @@ footer {
   align-items: center;
   background: #9f815f;
   background-color: #9f815f;
-  padding: 20px;
+  padding: 10px;
 }
 footer p {
   color: #fff;
   font-family: 'Inter', light;
-  font-size: 20px;
+  font-size: 15px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  margin-left: 5px;
 }
 .social-icons {
   display: flex;
@@ -274,7 +275,7 @@ footer p {
   padding-right: 20px;
 }
 .social-icons img {
-  height: 50px;
+  height: 40px;
 }
 .imagen-desktop {
   display: block;
