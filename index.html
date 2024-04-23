@@ -15,7 +15,12 @@
   <body>
     <header id="header">
       <div class="mobile-nav-toggle">
-        <img class="menu" src="img/menu.png" alt="Logo Hamburguesa" />
+        <img
+          class="menu"
+          src="img/menu.png"
+          alt="Logo Hamburguesa"
+          id="menu-icon"
+        />
       </div>
 
       <div class="logo-container-izq">
@@ -212,20 +217,18 @@
         const menuItems = document.querySelectorAll('.mobile-nav ul li a');
 
         mobileNavToggle.addEventListener('click', function () {
+          mobileNavToggle.classList.toggle('active');
           mobileNav.classList.toggle('active');
         });
 
-        // Agregar evento de clic a cada elemento del menú
         menuItems.forEach(function (menuItem) {
           menuItem.addEventListener('click', function () {
-            // Eliminar la clase active-menu-item de todos los elementos del menú
             menuItems.forEach(function (item) {
               item.classList.remove('active-menu-item');
             });
-            // Agregar la clase active-menu-item solo al elemento en el que se hizo clic
             menuItem.classList.add('active-menu-item');
 
-            // Cerrar el menú hamburguesa
+            mobileNavToggle.classList.remove('active');
             mobileNav.classList.remove('active');
           });
         });
@@ -234,8 +237,11 @@
       function scrollToSection(sectionId) {
         var section = document.getElementById(sectionId);
         if (section) {
-          // Calcular el desplazamiento
-          var offset = section.offsetTop - 75;
+          var offsetTop = section.offsetTop;
+          var offset = offsetTop - 75;
+
+          const isMobile = window.innerWidth <= 500;
+          if (isMobile) offset = offsetTop - 70;
 
           window.scrollTo({
             top: offset,

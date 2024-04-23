@@ -304,7 +304,7 @@ footer p {
   }
   .logo-container-der {
     margin-left: 10px;
-    display: flex;
+    display: block;
   }
   .logo-container-izq {
     display: none;
@@ -326,9 +326,17 @@ footer p {
     display: block;
     cursor: pointer;
   }
+  .mobile-nav-toggle #menu-icon {
+    transition: transform 0.3s ease;
+  }
+  .mobile-nav-toggle.active #menu-icon {
+    transform: rotate(90deg);
+  }
   .menu {
-    margin-right: 30px;
-    width: 30px;
+    width: 25px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
     height: auto;
   }
   .mobile-nav {
@@ -416,9 +424,6 @@ footer p {
   }
   .social-icons {
     margin-right: 0;
-  }
-  .social-icons a {
-    padding-right: 10px;
   }
   .social-icons img {
     height: 30px;
