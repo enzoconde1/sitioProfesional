@@ -53,7 +53,7 @@ header {
   line-height: normal;
   text-transform: uppercase;
 }
-.logo-container {
+.logo-container-izq {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -283,6 +283,12 @@ footer p {
 .imagen-mobile {
   display: none;
 }
+.logo-container-der {
+  display: none;
+}
+.logo-container-izq {
+  display: block;
+}
 
 @media (max-width: 500px) {
   .imagen-desktop {
@@ -291,10 +297,15 @@ footer p {
   .imagen-mobile {
     display: block;
   }
-  .logo-container {
+  .logo-container-der {
+    margin-left: 10px;
     display: flex;
-    align-items: center;
-    margin-right: 10px;
+  }
+  .logo-container-izq {
+    display: none;
+  }
+  .logo-container-der {
+    display: block;
   }
   .logo {
     width: 50px;
@@ -310,7 +321,7 @@ footer p {
     display: none;
   }
   .tortascontainer img {
-    height: 180px;
+    height: 170px;
   }
   .aboutmetxt1 {
     margin-left: 10px;
@@ -346,7 +357,8 @@ footer p {
     width: auto;
   }
   header {
-    height: 80px;
+    flex-direction: row;
+    height: auto;
   }
   main {
     margin-top: auto;
