@@ -11,6 +11,7 @@
     <link href="https://fonts.cdnfonts.com/css/inter" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
+
   <body>
     <header id="header">
       <div class="mobile-nav-toggle">
@@ -74,72 +75,68 @@
       </section>
 
       <!--SOBRE MI-->
-      <section id="aboutme">
-        <div class="aboutme">
-          <div class="aboutmeimgcontainer">
-            <h2 class="subtitle">¿Quién soy?</h2>
-            <div class="aboutmetxt">
-              <p class="aboutmetxt1">
-                Soy Carolina, una pastelera apasionada. Cada torta que creo es
-                una expresión de mi alma. A través de los sabores y detalles,
-                cuento historias de perseverancia y amor. Mis manos son
-                instrumentos de magia, transformando ingredientes simples en
-                obras maestras de felicidad. Con cada torta, comparto un pedazo
-                de mi corazón, recordando que el amor es el ingrediente más
-                importante en la vida.
-              </p>
-            </div>
-          </div>
-          <img src="img/profile.png" alt="Profile Pic" />
+      <section class="aboutme" id="aboutme">
+        <div class="aboutmeimgcontainer">
+          <h2 class="subtitle">¿Quién soy?</h2>
           <div class="aboutmetxt">
-            <p class="aboutmetxt2">
-              Como pastelera apasionada, mi misión es crear experiencias dulces
-              que deleiten los sentidos y alimenten el alma. Mi visión es
-              convertirme en una referencia en el mundo de la repostería,
-              reconocida por la calidad excepcional de mis creaciones y por el
-              amor y la pasión que imprimo en cada una de ellas.
+            <p class="aboutmetxt1">
+              Soy Carolina, una pastelera apasionada. Cada torta que creo es una
+              expresión de mi alma. A través de los sabores y detalles, cuento
+              historias de perseverancia y amor. Mis manos son instrumentos de
+              magia, transformando ingredientes simples en obras maestras de
+              felicidad. Con cada torta, comparto un pedazo de mi corazón,
+              recordando que el amor es el ingrediente más importante en la
+              vida.
             </p>
           </div>
+        </div>
+        <img src="img/profile.png" alt="Profile Pic" />
+        <div class="aboutmetxt">
+          <p class="aboutmetxt2">
+            Como pastelera apasionada, mi misión es crear experiencias dulces
+            que deleiten los sentidos y alimenten el alma. Mi visión es
+            convertirme en una referencia en el mundo de la repostería,
+            reconocida por la calidad excepcional de mis creaciones y por el
+            amor y la pasión que imprimo en cada una de ellas.
+          </p>
         </div>
       </section>
 
       <!--CONTACTO-->
-      <section id="contact">
-        <div class="contact">
-          <div class="form-content">
-            <h2 class="subtitle">Escribime</h2>
-            <form>
-              <div class="name">
-                <label for="name">Nombre</label>
-                <input type="text" id="name" name="name" />
-              </div>
-              <div class="message">
-                <label for="message">Mensaje</label>
-                <textarea id="message" name="message"></textarea>
-              </div>
-              <div class="button-container">
-                <a
-                  onclick="enviarMensajeWhatsApp()"
-                  class="whatsappbutton"
-                  href="#"
-                  target="_blank"
-                >
-                  <span>Ir a WhatsApp</span>
-                </a>
-              </div>
-            </form>
-          </div>
-          <div class="maps-container">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13165.697997684154!2d-58.59206378839112!3d-34.41597093759655!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bca5c7fafaff55%3A0xd6eea80635a5e3b1!2sBelgrano%20749%2C%20Tigre%2C%20Provincia%20de%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1ses!2sus!4v1713823668370!5m2!1ses!2sus"
-              width="100%"
-              height="500px"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
+      <section class="contact" id="contact">
+        <div class="form-content">
+          <h2 class="subtitle">Escribime</h2>
+          <form>
+            <div class="name">
+              <label for="name">Nombre</label>
+              <input type="text" id="name" name="name" />
+            </div>
+            <div class="message">
+              <label for="message">Mensaje</label>
+              <textarea id="message" name="message"></textarea>
+            </div>
+            <div class="button-container">
+              <a
+                onclick="enviarMensajeWhatsApp()"
+                class="whatsappbutton"
+                href="#"
+                target="_blank"
+              >
+                <span>Ir a WhatsApp</span>
+              </a>
+            </div>
+          </form>
+        </div>
+        <div class="maps-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13165.697997684154!2d-58.59206378839112!3d-34.41597093759655!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bca5c7fafaff55%3A0xd6eea80635a5e3b1!2sBelgrano%20749%2C%20Tigre%2C%20Provincia%20de%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1ses!2sus!4v1713823668370!5m2!1ses!2sus"
+            width="100%"
+            height="500px"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </section>
     </main>
@@ -212,9 +209,25 @@
       document.addEventListener('DOMContentLoaded', function () {
         const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
         const mobileNav = document.querySelector('.mobile-nav');
+        const menuItems = document.querySelectorAll('.mobile-nav ul li a');
 
         mobileNavToggle.addEventListener('click', function () {
           mobileNav.classList.toggle('active');
+        });
+
+        // Agregar evento de clic a cada elemento del menú
+        menuItems.forEach(function (menuItem) {
+          menuItem.addEventListener('click', function () {
+            // Eliminar la clase active-menu-item de todos los elementos del menú
+            menuItems.forEach(function (item) {
+              item.classList.remove('active-menu-item');
+            });
+            // Agregar la clase active-menu-item solo al elemento en el que se hizo clic
+            menuItem.classList.add('active-menu-item');
+
+            // Cerrar el menú hamburguesa
+            mobileNav.classList.remove('active');
+          });
         });
       });
 

@@ -111,7 +111,6 @@ header {
 .tortas {
   padding: 10px;
   background: #9f815f;
-  margin-top: -5px;
   box-shadow: 0px 50px 100px 5px rgba(0, 0, 0, 0.2) inset;
 }
 .tortascontainer {
@@ -310,12 +309,9 @@ footer p {
   .logo-container-izq {
     display: none;
   }
-  .logo-container-der {
-    display: block;
-  }
   .logo {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
   }
   .title {
     font-size: 40px;
@@ -323,22 +319,58 @@ footer p {
   .subtitle {
     font-size: 30px;
   }
+  .desktop-nav {
+    display: none;
+  }
   .mobile-nav-toggle {
     display: block;
+    cursor: pointer;
   }
   .menu {
     margin-right: 30px;
     width: 30px;
-    height: 30px;
+    height: auto;
   }
   .mobile-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    background-color: #9f815f;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .mobile-nav ul li a {
+    color: #000;
+    font-family: 'Inter', light;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-decoration: none;
+    position: relative;
+    width: 71px;
+  }
+  .mobile-nav ul li {
+    margin-bottom: 10px;
+  }
+  .mobile-nav ul li:last-child {
+    margin-bottom: 0;
+  }
+  .mobile-nav ul li a:hover:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(0, 0, 0);
+    animation: underline 0.3s forwards;
+  }
+  .mobile-nav.active {
     display: block;
   }
-  .desktop-nav {
-    display: none;
-  }
   .tortascontainer img {
-    height: 170px;
+    height: 160px;
   }
   .aboutmetxt1 {
     margin-left: 10px;
@@ -349,8 +381,9 @@ footer p {
     margin-left: 10px;
     margin-right: 10px;
   }
-  .aboutmeimgcontainer {
-    flex: 1 0 0;
+  .aboutme img {
+    margin-top: auto;
+    height: auto;
   }
   .contact {
     flex-direction: column;
@@ -374,6 +407,7 @@ footer p {
     width: auto;
   }
   header {
+    align-items: center;
     flex-direction: row;
     height: auto;
   }
@@ -388,35 +422,5 @@ footer p {
   }
   .social-icons img {
     height: 30px;
-  }
-
-  /*---------------------
-HAMBURGER MENU
-----------------------*/
-
-  .mobile-menu {
-    display: block;
-  }
-
-  .mobile-nav-toggle {
-    cursor: pointer;
-  }
-
-  .menu {
-    width: 30px;
-    height: auto;
-  }
-
-  .mobile-nav {
-    display: none; /* Empieza oculto */
-    position: absolute; /* Cambiamos la posición */
-    top: 100%; /* Colocamos debajo del encabezado */
-    width: 100%; /* Ocupa todo el ancho */
-    background-color: #fff; /* Fondo blanco para destacar */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
-  }
-
-  .mobile-nav.active {
-    display: block;
   }
 }
