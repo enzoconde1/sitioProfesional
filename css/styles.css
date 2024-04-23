@@ -394,7 +394,12 @@ footer p {
 HAMBURGER MENU
 ----------------------*/
 
+  .mobile-menu {
+    display: block;
+  }
+
   .hamburger-menu {
+    display: block;
     position: fixed;
     top: 0;
     left: 0;

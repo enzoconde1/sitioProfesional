@@ -38,9 +38,12 @@
 
       <nav class="mobile-menu">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li>
+            <a onclick="scrollToSection('inicio')">INICIO</a>
+          </li>
+          <li><a onclick="scrollToSection('fotos')">FOTOS</a></li>
+          <li><a onclick="scrollToSection('aboutme')">SOBRE MI</a></li>
+          <li><a onclick="scrollToSection('contact')">CONTACTO</a></li>
         </ul>
       </nav>
       <div class="logo-container-izq">
@@ -224,6 +227,18 @@
           }
         }
       }
+
+      (function () {
+        $('.hamburger-menu').on('click', function () {
+          $('.bar').toggleClass('animate');
+          $('.mobile-menu').toggleClass('active');
+          return false;
+        });
+        $('.has-children').on('click', function () {
+          $(this).children('ul').slideToggle('slow', 'swing');
+          $('.icon-arrow').toggleClass('open');
+        });
+      })();
 
       function scrollToSection(sectionId) {
         var section = document.getElementById(sectionId);
