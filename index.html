@@ -24,9 +24,25 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      href="https://fonts.googleapis.com/css?family=Playfair+Display|Raleway"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
   </head>
   <body>
     <header id="header">
+      <div class="hamburger-menu">
+        <div class="bar"></div>
+      </div>
+
+      <nav class="mobile-menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
       <div class="logo-container-izq">
         <img class="logo" src="img/logo.jpg" alt="Logo Izquierdo" />
       </div>
@@ -34,7 +50,7 @@
       <div class="logo-container-der">
         <img class="logo" src="img/logo.jpg" alt="Logo Derecho" />
       </div>
-      <nav>
+      <nav class="desktop-nav">
         <ul>
           <li>
             <a onclick="scrollToSection('inicio')">INICIO</a>
