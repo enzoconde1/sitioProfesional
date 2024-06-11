@@ -1,3 +1,4 @@
+require('dotenv').config();
 var atoken = process.env.IG_TOKEN;
 
 var feed = new Instafeed({
