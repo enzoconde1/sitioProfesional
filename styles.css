@@ -295,6 +295,33 @@ footer p {
   display: block;
 }
 
+#instafeed {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 350px; 
+  grid-gap: 0.5rem;
+  max-width: 64rem;
+  margin: auto;
+}
+
+#instafeed a {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+#instafeed img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  transition: transform 0.3s ease; /
+}
+
+#instafeed a:hover img {
+  transform: scale(1.05); 
+}
+
 @media (max-width: 500px) {
   .imagen-desktop {
     display: none;
