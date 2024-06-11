@@ -1,5 +1,4 @@
-var atoken =
-  'IGQWRNZA3lTYzgtTGNkampqWXItREZApWUhKUVBIRGVXU01Vekk5U0lKOFVmc1BQSFUtNDlZAdnNPM0M3b016cnd1dHhSdzB3M0F1LVZAyLVBkUGNiQjE1bjVSSzdIYWlBU0JKZAzRmc1ZAZAZAjc2X3VUN2FaSXoxeERtWVkZD';
+var atoken = process.env.IG_TOKEN;
 
 var feed = new Instafeed({
   get: 'user',
