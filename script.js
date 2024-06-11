@@ -1,7 +1,5 @@
-var facebookMetaToken = process.env.IG_TOKEN;
-document
-  .querySelector('meta[property="og:nombre-del-token"]')
-  .setAttribute('content', facebookMetaToken);
+var facebookMetaToken =
+  'IGQWRQRmRCMEoxSEY2Y1lYQW4tVEZA2N3BQSWtjRWhwRExBbFBLWUM4TGwzRWUzZAzNsWDlPbE1qVnFWZAVI0SzBpRFg3N2hGV0szTjNhQUozZAHYwU1NDSnFDQndxbU9KWTN5WVBGZADlBVHhJU2dLOXJzcDZArZAXVSeUUZD';
 
 var feed = new Instafeed({
   get: 'user',
