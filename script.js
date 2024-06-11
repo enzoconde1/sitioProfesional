@@ -1,8 +1,8 @@
-var token = document.currentScript.getAttribute('data-access-token');
+var atoken = document.currentScript.getAttribute('data-access-token');
 
 var feed = new Instafeed({
   get: 'user',
-  accessToken: token,
+  accessToken: atoken,
   resolution: 'standard_resolution',
   limit: 9,
   template: '<a href="{{link}}" target="_blank"><img src="{{image}}" /></a>',
