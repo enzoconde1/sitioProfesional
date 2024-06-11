@@ -1,4 +1,4 @@
-var accessToken = document.currentScript.getAttribute('data-access-token');
+var token = document.currentScript.getAttribute('data-access-token');
 
 var feed = new Instafeed({
   get: 'user',
