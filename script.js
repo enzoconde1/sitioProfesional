@@ -1,9 +1,11 @@
-require('dotenv').config();
-var atoken = process.env.IG_TOKEN;
+var facebookMetaToken = process.env.IG_TOKEN;
+document
+  .querySelector('meta[property="og:nombre-del-token"]')
+  .setAttribute('content', facebookMetaToken);
 
 var feed = new Instafeed({
   get: 'user',
-  accessToken: atoken,
+  accessToken: facebookMetaToken,
   resolution: 'standard_resolution',
   limit: 9,
   template: '<a href="{{link}}" target="_blank"><img src="{{image}}" /></a>',
