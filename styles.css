@@ -455,4 +455,8 @@ footer p {
   .social-icons img {
     height: 30px;
   }
+
+  #instafeed {
+    grid-auto-rows: 200px; 
+  }
 }
