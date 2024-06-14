@@ -1,6 +1,8 @@
 var facebookMetaToken =
   'IGQWRQRmRCMEoxSEY2Y1lYQW4tVEZA2N3BQSWtjRWhwRExBbFBLWUM4TGwzRWUzZAzNsWDlPbE1qVnFWZAVI0SzBpRFg3N2hGV0szTjNhQUozZAHYwU1NDSnFDQndxbU9KWTN5WVBGZADlBVHhJU2dLOXJzcDZArZAXVSeUUZD';
 
+// INSTAFEED - CARGA FOTOS  DE INSTAGRAM
+
 var feed = new Instafeed({
   get: 'user',
   accessToken: facebookMetaToken,
@@ -14,26 +16,110 @@ var feed = new Instafeed({
 
 feed.run();
 
-function enviarMensajeWhatsApp() {
-  var name = document.getElementById('name').value;
-  var message = document.getElementById('message').value;
+// VALIDACIÓN DE FORMULARIO DE CONTACTO
 
+// VALIDACION AL TOCAR FORM
+var nameInput = document.getElementById('name');
+nameInput.addEventListener('blur', function () {
+  nameValidation();
+});
+
+var messageInput = document.getElementById('message');
+messageInput.addEventListener('blur', function () {
+  messageValidation();
+});
+
+// VALIDACION DE NOMBRE
+function nameValidation() {
+  var name = nameInput.value;
+  var nameLabel = document.querySelector('label[for="name"]');
+
+  var nameHasNumbers = /\d/.test(name);
+  var nameHasSpecialChars = /[^\w\s]/.test(name);
+
+  var nameError;
+
+  if (name === '') {
+    nameError = 'Ingresa un nombre.';
+  } else if (nameHasNumbers) {
+    nameError = 'No debe contener números.';
+  } else if (nameHasSpecialChars) {
+    nameError = 'No debe contener caracteres especiales.';
+  } else {
+    nameError = '';
+  }
+
+  if (nameError !== '') {
+    nameLabel.style.color = 'red';
+    nameLabel.textContent = 'Nombre - ' + nameError;
+  } else {
+    nameLabel.style.color = '#fff';
+    nameLabel.textContent = 'Nombre';
+  }
+
+  fieldsVerification();
+}
+
+// VALIDACION DE MENSAJE
+function messageValidation() {
+  var message = messageInput.value;
+  var messageLabel = document.querySelector('label[for="message"]');
+
+  var messageError = message === '' ? 'Ingresa un mensaje.' : '';
+
+  if (messageError !== '') {
+    messageLabel.style.color = 'red';
+    messageLabel.textContent = 'Mensaje - ' + messageError;
+  } else {
+    messageLabel.style.color = '#fff';
+    messageLabel.textContent = 'Mensaje';
+  }
+
+  fieldsVerification();
+}
+
+// VERIFICACION DE ERRORES PARA DESHABILITAR BOTON
+function fieldsVerification() {
+  var name = nameInput.value;
+  var message = messageInput.value;
+  var nameLabel = document.querySelector('label[for="name"]');
+  var messageLabel = document.querySelector('label[for="message"]');
+  var button = document.getElementById('whatsappbutton');
+
+  var nameColor = getComputedStyle(nameLabel).color;
+  var messageColor = getComputedStyle(messageLabel).color;
+
+  var nameError = name === '' || nameColor === 'rgb(255, 0, 0)';
+  var messageError = message === '' || messageColor === 'rgb(255, 0, 0)';
+
+  if (nameError || messageError) {
+    button.classList.add('disabled');
+  } else {
+    button.classList.remove('disabled');
+  }
+}
+
+// ENVIAR MENSAJE DE WHATSAPP
+function sendWhatsAppMessage() {
+  var name = nameInput.value;
+  var message = messageInput.value;
   var messageCodified = encodeURIComponent(message);
 
-  var enlaceWhatsApp =
+  var whatsAppLink =
     'https://wa.me/541163507783?text=' +
     'Hola Carolina, soy ' +
     name +
     '. Mensaje: ' +
     messageCodified;
 
-  window.open(enlaceWhatsApp, '_blank');
+  window.open(whatsAppLink, '_blank');
 }
 
 window.onscroll = function () {
   scrollFunction();
 };
 
+// AJUSTAR HEADER AL HACER SCROLL
 function scrollFunction() {
   const header = document.getElementById('header');
   const title = document.querySelector('.title');
@@ -64,6 +150,7 @@ function scrollFunction() {
   }
 }
 
+// MOBILE NAV
 document.addEventListener('DOMContentLoaded', function () {
   const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
   const mobileNav = document.querySelector('.mobile-nav');
@@ -87,6 +174,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+// SCROLL TO SECTION
 function scrollToSection(sectionId) {
   var section = document.getElementById(sectionId);
   if (section) {
