@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background: #9f815f;
 }
 ::-webkit-scrollbar {
   width: 12px;
@@ -11,29 +12,26 @@ body {
 ::-webkit-scrollbar-track {
   background-color: #9f815f;
 }
+html {
+  scroll-behavior: smooth;
+}
 main {
   text-align: center;
-  margin-top: 120px;
-}
-.clsImagen img {
-  width: 100%;
-  min-width: 100%;
 }
 header {
   background-color: #9f815f;
-  flex-direction: column;
   color: rgb(0, 0, 0);
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
   top: 0;
-  flex-shrink: 0;
+  left: 0;
   width: 100%;
-  height: 100px;
-  z-index: 1000;
+  height: 700px;
   padding: 10px;
-  transition: all 0.3s;
+  z-index: 1;
+  transition: height 0.5s ease; 
 }
 .title {
   color: #fff;
@@ -109,7 +107,8 @@ header {
   }
 }
 #fotos {
-  padding: 10px;
+  margin-top: 150px;
+  padding: 30px;
   background: #9f815f;
   box-shadow: 0px 50px 100px 5px rgba(0, 0, 0, 0.2) inset;
 }

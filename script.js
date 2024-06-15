@@ -129,8 +129,8 @@ function scrollFunction() {
   const isMobile = window.innerWidth <= 500;
   if (!isMobile) {
     if (
-      document.body.scrollTop > 80 ||
-      document.documentElement.scrollTop > 80
+      document.body.scrollTop > 50 ||
+      document.documentElement.scrollTop > 50
     ) {
       header.style.padding = '10px 20px';
       header.style.flexDirection = 'row';
@@ -139,7 +139,7 @@ function scrollFunction() {
       logo.style.width = '60px';
       logo.style.height = '60px';
     } else {
-      header.style.height = 'auto';
+      header.style.height = '700px';
       header.style.padding = '10px';
       header.style.flexDirection = 'column';
       title.style.fontSize = '60px';
@@ -148,6 +148,23 @@ function scrollFunction() {
       logo.style.height = '95px';
     }
   }
+}
+
+// SCROLL TO SECTION
+function scrollToSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  const headerHeight = document.getElementById('header').offsetHeight;
+  console.log(section.offsetTop);
+  console.log(headerHeight);
+  const sectionPosition =
+    headerHeight < 600
+      ? section.offsetTop - headerHeight
+      : section.offsetTop - 70;
+
+  window.scrollTo({
+    top: sectionPosition,
+    behavior: 'smooth',
+  });
 }
 
 // MOBILE NAV
@@ -174,19 +191,29 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-// SCROLL TO SECTION
-function scrollToSection(sectionId) {
-  var section = document.getElementById(sectionId);
-  if (section) {
-    var offsetTop = section.offsetTop;
-    var offset = offsetTop - 75;
+document.addEventListener('DOMContentLoaded', function () {
+  gsap.registerPlugin(ScrollTrigger);
 
-    const isMobile = window.innerWidth <= 500;
-    if (isMobile) offset = offsetTop - 70;
+  const header = document.querySelector('header');
 
-    window.scrollTo({
-      top: offset,
-      behavior: 'smooth',
-    });
+  // Ajustar altura inicial del header según el scroll
+  function adjustHeaderHeight() {
+    const scrollPosition = window.scrollY;
+    if (scrollPosition === 0) {
+      gsap.to(header, { height: 700, duration: 0.5 });
+    } else {
+      gsap.to(header, { height: 60, duration: 0.5 });
+    }
   }
-}
+
+  // Añadir evento de scroll para ajustar la altura del header
+  window.addEventListener('scroll', adjustHeaderHeight);
+
+  // ScrollTrigger para animación suave
+  ScrollTrigger.create({
+    start: 0,
+    end: 1, // Sólo necesitamos que se active inmediatamente al hacer scroll
+    onEnter: () => adjustHeaderHeight(),
+    onLeaveBack: () => adjustHeaderHeight(),
+  });
+});
