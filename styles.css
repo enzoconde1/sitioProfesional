@@ -22,6 +22,7 @@ header {
   background-color: #9f815f;
   color: rgb(0, 0, 0);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -36,7 +37,7 @@ header {
 .title {
   color: #fff;
   font-family: 'Just Another Hand', sans-serif;
-  font-size: 64px;
+  font-size: 80px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -58,8 +59,8 @@ header {
 }
 .logo {
   border-radius: 200px;
-  width: 400px;
-  height: 400px;
+  width: 140px;
+  height: 140px;
   transition: width 0.3s, height 0.3s;
 }
 .mobile-nav-toggle {

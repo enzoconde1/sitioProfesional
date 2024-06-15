@@ -189,7 +189,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const header = document.querySelector('header');
 
-  // Ajustar altura inicial del header según el scroll
   function adjustHeaderHeight() {
     const scrollPosition = window.scrollY;
     if (scrollPosition === 0) {
@@ -199,13 +198,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Añadir evento de scroll para ajustar la altura del header
   window.addEventListener('scroll', adjustHeaderHeight);
 
   // ScrollTrigger para animación suave
   ScrollTrigger.create({
     start: 0,
-    end: 1, // Sólo necesitamos que se active inmediatamente al hacer scroll
+    end: 1,
     onEnter: () => adjustHeaderHeight(),
     onLeaveBack: () => adjustHeaderHeight(),
   });
