@@ -31,7 +31,7 @@ header {
   height: 700px;
   padding: 10px;
   z-index: 1;
-  transition: height 0.5s ease; 
+  transition: all 0.3s ease; 
 }
 .title {
   color: #fff;
@@ -41,6 +41,7 @@ header {
   font-weight: 400;
   line-height: normal;
   text-transform: uppercase;
+  transition: font-size 0.1s;
 }
 .subtitle {
   color: #000000;
@@ -51,15 +52,15 @@ header {
   line-height: normal;
   text-transform: uppercase;
 }
-.logo-container-izq {
-  position: absolute;
-  top: 10px;
-  left: 10px;
+.logo-container {
+  justify-content: center;
+  align-items: center;
 }
 .logo {
   border-radius: 200px;
-  width: 95px;
-  height: 95px;
+  width: 400px;
+  height: 400px;
+  transition: width 0.3s, height 0.3s;
 }
 .mobile-nav-toggle {
   display: none;
@@ -72,11 +73,12 @@ header {
   padding: 0;
   margin: 0;
   display: flex;
+  transition: all 0.3s;
 }
 .desktop-nav ul li {
-  margin-left: 20px;
   position: relative;
 }
+
 .desktop-nav ul li a {
   color: #000;
   font-family: 'Inter', light;
@@ -86,8 +88,12 @@ header {
   line-height: normal;
   text-decoration: none;
   position: relative;
-  width: 71px;
 }
+
+.desktop-nav ul li:not(:last-child) {
+  margin-right: 20px; /* Ajusta este valor según el espacio que necesites */
+}
+
 .desktop-nav ul li a:hover:after {
   content: '';
   position: absolute;
@@ -289,36 +295,38 @@ footer p {
   line-height: normal;
   margin-left: 5px;
 }
-.social-icons {
+header .social-icons {
+  display: flex;
+  margin-top: 20px;
+}
+
+header .social-icons img {
+  height: 50px;
+}
+
+header .social-icons a {
+  margin-right: 15px; /* Ajusta el valor según el espacio que necesites */
+}
+
+header .social-icons a:last-child {
+  margin-right: 0; /* Elimina el margen derecho del último ícono */
+}
+
+/* Estilos para los íconos sociales en el footer */
+footer .social-icons {
   display: flex;
   margin-right: 30px;
 }
-.social-icons a {
+
+footer .social-icons a {
   padding-right: 20px;
 }
-.social-icons img {
+
+footer .social-icons img {
   height: 40px;
-}
-.imagen-desktop {
-  display: block;
-}
-.imagen-mobile {
-  display: none;
-}
-.logo-container-der {
-  display: none;
-}
-.logo-container-izq {
-  display: block;
 }
 
 @media (max-width: 500px) {
-  .imagen-desktop {
-    display: none;
-  }
-  .imagen-mobile {
-    display: block;
-  }
   .logo-container-der {
     margin-left: 10px;
     display: block;

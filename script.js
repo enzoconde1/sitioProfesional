@@ -125,6 +125,7 @@ function scrollFunction() {
   const title = document.querySelector('.title');
   const logo = document.querySelector('.logo');
   const nav = document.querySelector('nav');
+  const socialIcons = document.querySelector('.social-icons');
 
   const isMobile = window.innerWidth <= 500;
   if (!isMobile) {
@@ -132,20 +133,36 @@ function scrollFunction() {
       document.body.scrollTop > 50 ||
       document.documentElement.scrollTop > 50
     ) {
-      header.style.padding = '10px 20px';
-      header.style.flexDirection = 'row';
-      title.style.fontSize = '50px';
-      nav.style.marginLeft = '15px';
-      logo.style.width = '60px';
-      logo.style.height = '60px';
+      gsap.to(header, {
+        padding: '10px 20px',
+        height: 60,
+        duration: 0.3,
+        onComplete: () => {
+          header.style.padding = '10px 20px';
+          header.style.flexDirection = 'row';
+          title.style.fontSize = '50px';
+          nav.style.marginLeft = '15px';
+          logo.style.width = '60px';
+          logo.style.height = '60px';
+          socialIcons.style.display = 'none';
+        },
+      });
     } else {
-      header.style.height = '700px';
-      header.style.padding = '10px';
-      header.style.flexDirection = 'column';
-      title.style.fontSize = '60px';
-      nav.style.marginLeft = 'unset';
-      logo.style.width = '95px';
-      logo.style.height = '95px';
+      gsap.to(header, {
+        height: 700,
+        padding: '10px',
+        duration: 0.3,
+        onComplete: () => {
+          header.style.height = '700px';
+          header.style.padding = '10px';
+          header.style.flexDirection = 'column';
+          title.style.fontSize = '80px';
+          nav.style.marginLeft = '0';
+          logo.style.width = '140px';
+          logo.style.height = '140px';
+          socialIcons.style.display = 'flex';
+        },
+      });
     }
   }
 }
@@ -166,6 +183,33 @@ function scrollToSection(sectionId) {
     behavior: 'smooth',
   });
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const header = document.querySelector('header');
+
+  // Ajustar altura inicial del header según el scroll
+  function adjustHeaderHeight() {
+    const scrollPosition = window.scrollY;
+    if (scrollPosition === 0) {
+      gsap.to(header, { height: 700, duration: 0.3 });
+    } else {
+      gsap.to(header, { height: 60, duration: 0.3 });
+    }
+  }
+
+  // Añadir evento de scroll para ajustar la altura del header
+  window.addEventListener('scroll', adjustHeaderHeight);
+
+  // ScrollTrigger para animación suave
+  ScrollTrigger.create({
+    start: 0,
+    end: 1, // Sólo necesitamos que se active inmediatamente al hacer scroll
+    onEnter: () => adjustHeaderHeight(),
+    onLeaveBack: () => adjustHeaderHeight(),
+  });
+});
 
 // MOBILE NAV
 document.addEventListener('DOMContentLoaded', function () {
@@ -188,32 +232,5 @@ document.addEventListener('DOMContentLoaded', function () {
       mobileNavToggle.classList.remove('active');
       mobileNav.classList.remove('active');
     });
-  });
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-  gsap.registerPlugin(ScrollTrigger);
-
-  const header = document.querySelector('header');
-
-  // Ajustar altura inicial del header según el scroll
-  function adjustHeaderHeight() {
-    const scrollPosition = window.scrollY;
-    if (scrollPosition === 0) {
-      gsap.to(header, { height: 700, duration: 0.5 });
-    } else {
-      gsap.to(header, { height: 60, duration: 0.5 });
-    }
-  }
-
-  // Añadir evento de scroll para ajustar la altura del header
-  window.addEventListener('scroll', adjustHeaderHeight);
-
-  // ScrollTrigger para animación suave
-  ScrollTrigger.create({
-    start: 0,
-    end: 1, // Sólo necesitamos que se active inmediatamente al hacer scroll
-    onEnter: () => adjustHeaderHeight(),
-    onLeaveBack: () => adjustHeaderHeight(),
   });
 });
