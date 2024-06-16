@@ -335,9 +335,6 @@ footer .social-icons img {
 }
 
 @media (max-width: 500px) {
-  .logo-container {
-    margin-left: 15px;
-  }
   .logo {
     width: 40px;
     height: 40px;

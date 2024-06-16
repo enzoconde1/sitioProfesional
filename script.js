@@ -133,6 +133,7 @@ function scrollFunction() {
     'nav.desktop-nav ul li:first-child a'
   );
 
+  const isMobile = window.innerWidth <= 500;
   const scrollPosition = window.scrollY || document.documentElement.scrollTop;
 
   if (scrollPosition > 50) {
@@ -143,7 +144,7 @@ function scrollFunction() {
       onComplete: () => {
         header.style.padding = '10px 20px';
         header.style.flexDirection = 'row';
-        title.style.fontSize = '50px';
+        title.style.fontSize = isMobile ? '40px' : '50px';
         nav.style.marginLeft = '15px';
         logo.style.marginRight = '15px';
         logo.style.width = '60px';
@@ -163,7 +164,7 @@ function scrollFunction() {
         header.style.height = '700px';
         header.style.padding = '10px';
         header.style.flexDirection = 'column';
-        title.style.fontSize = '80px';
+        title.style.fontSize = isMobile ? '60px' : '80px';
         nav.style.marginLeft = '0';
         logo.style.marginRight = '0';
         logo.style.width = '140px';
