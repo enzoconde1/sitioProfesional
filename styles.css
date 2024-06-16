@@ -38,7 +38,7 @@ header {
   width: 100%;
   height: 700px;
   z-index: 1;
-  transition: all 0.3s ease; 
+  transition: all 0.3s ease;
 }
 .title {
   color: #fff;
@@ -67,14 +67,12 @@ header {
   display: flex;
   align-items: center;
 }
-
 .headerContact a {
   display: flex;
   align-items: center;
-  text-decoration: none; /* Quitar el subrayado del enlace */
-  color: inherit; /* Mantener el color del texto */
+  text-decoration: none;
+  color: inherit;
 }
-
 .headerContact p {
   margin-block-start: 0;
   margin-block-end: 0;
@@ -84,7 +82,14 @@ header {
   height: 30px;
   margin-right: 10px;
 }
-
+.downButton {
+  margin-top: 15px;
+  transition: all 0.1s ease;
+}
+.downButton img {
+  height: 45px;
+  transition: all 0.1s ease;
+}
 .logo-container {
   justify-content: center;
   align-items: center;
@@ -124,7 +129,7 @@ header {
 }
 .desktop-nav ul li:first-child a {
   display: none;
-  transition: all 0.1s ease; 
+  transition: all 0.1s ease;
 }
 .desktop-nav ul li:first-child {
   margin-right: 0;
@@ -160,7 +165,7 @@ header {
 #instafeed {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 350px; 
+  grid-auto-rows: 350px;
   grid-gap: 0.5rem;
   max-width: 64rem;
   margin: auto;
@@ -176,12 +181,12 @@ header {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover; 
-  transition: transform 0.4s ease; /
+  object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
 #instafeed a:hover img {
-  transform: scale(1.05); 
+  transform: scale(1.05);
 }
 .aboutme {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -345,11 +350,11 @@ header .social-icons img {
 }
 
 header .social-icons a {
-  margin-right: 15px; 
+  margin-right: 15px;
 }
 
 header .social-icons a:last-child {
-  margin-right: 0; 
+  margin-right: 0;
 }
 
 footer .social-icons {
@@ -368,7 +373,7 @@ footer .social-icons img {
 @media (max-width: 500px) {
   .logo {
     width: 140px;
-    height: 140px
+    height: 140px;
   }
   .title {
     margin-top: 10px;
@@ -472,10 +477,7 @@ footer .social-icons img {
   .social-icons {
     margin-right: 0;
   }
-  .social-icons img {
-    height: 30px;
-  }
   #instafeed {
-    grid-auto-rows: 200px; 
+    grid-auto-rows: 200px;
   }
 }

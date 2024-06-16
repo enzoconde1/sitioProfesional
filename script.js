@@ -128,6 +128,7 @@ function scrollFunction() {
   const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
   const socialIcons = document.querySelector('.social-icons');
   const headerContacts = document.querySelectorAll('.headerContact');
+  const downButton = document.querySelector('.downButton');
   const inicioLinkLi = document.querySelector(
     'nav.desktop-nav ul li:first-child'
   );
@@ -154,6 +155,7 @@ function scrollFunction() {
         logo.style.height = isMobile ? '45px' : '60px';
         socialIcons.style.display = 'none';
         headerContacts.forEach((contact) => (contact.style.display = 'none'));
+        downButton.style.display = 'none';
       },
     });
 
@@ -175,6 +177,7 @@ function scrollFunction() {
         logo.style.height = '140px';
         socialIcons.style.display = 'flex';
         headerContacts.forEach((contact) => (contact.style.display = 'flex'));
+        downButton.style.display = 'block';
       },
     });
 
@@ -221,4 +224,15 @@ document.addEventListener('DOMContentLoaded', function () {
       mobileNav.classList.remove('active');
     });
   });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  var phoneLink = document.getElementById('phoneLink');
+
+  if (!isMobile) {
+    phoneLink.removeAttribute('href');
+    phoneLink.addEventListener('click', function (event) {
+      event.preventDefault();
+    });
+  }
 });
