@@ -126,6 +126,7 @@ function scrollFunction() {
   const logo = document.querySelector('.logo');
   const nav = document.querySelector('nav');
   const socialIcons = document.querySelector('.social-icons');
+  const headerContacts = document.querySelectorAll('.headerContact');
   const inicioLinkLi = document.querySelector(
     'nav.desktop-nav ul li:first-child'
   );
@@ -151,6 +152,7 @@ function scrollFunction() {
         logo.style.width = isMobile ? '45px' : '60px';
         logo.style.height = isMobile ? '45px' : '60px';
         socialIcons.style.display = 'none';
+        headerContacts.forEach((contact) => (contact.style.display = 'none'));
       },
     });
 
@@ -171,6 +173,7 @@ function scrollFunction() {
         logo.style.width = '140px';
         logo.style.height = '140px';
         socialIcons.style.display = 'flex';
+        headerContacts.forEach((contact) => (contact.style.display = 'flex'));
       },
     });
 

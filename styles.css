@@ -68,6 +68,13 @@ header {
   align-items: center;
 }
 
+.headerContact a {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Quitar el subrayado del enlace */
+  color: inherit; /* Mantener el color del texto */
+}
+
 .headerContact p {
   margin-block-start: 0;
   margin-block-end: 0;
