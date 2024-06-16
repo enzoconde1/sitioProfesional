@@ -134,22 +134,21 @@ function scrollFunction() {
   );
 
   let scrollPosition = window.scrollY || document.documentElement.scrollTop;
-  console.log(scrollPosition);
   scrollPosition = isMobile ? scrollPosition > 0.1 : scrollPosition > 10;
 
   if (scrollPosition) {
     gsap.to(header, {
-      padding: '10px 20px',
-      height: 60,
+      height: isMobile ? '50px' : '60px',
       duration: 0.3,
       onComplete: () => {
         header.style.padding = '10px 20px';
         header.style.flexDirection = 'row';
+        title.style.marginTop = '0';
         title.style.fontSize = isMobile ? '40px' : '50px';
         nav.style.marginLeft = '15px';
         logo.style.marginRight = '15px';
-        logo.style.width = '60px';
-        logo.style.height = '60px';
+        logo.style.width = isMobile ? '45px' : '60px';
+        logo.style.height = isMobile ? '45px' : '60px';
         socialIcons.style.display = 'none';
       },
     });
@@ -158,13 +157,13 @@ function scrollFunction() {
     inicioLinkA.style.display = 'block';
   } else {
     gsap.to(header, {
-      height: 700,
-      padding: '10px',
+      height: '700px',
       duration: 0.3,
       onComplete: () => {
         header.style.height = '700px';
         header.style.padding = '10px';
         header.style.flexDirection = 'column';
+        title.style.marginTop = '10px';
         title.style.fontSize = isMobile ? '60px' : '80px';
         nav.style.marginLeft = '0';
         logo.style.marginRight = '0';
