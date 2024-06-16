@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (scrollPosition === 0) {
       gsap.to(header, { height: 700, duration: 0.3 });
     } else {
-      gsap.to(header, { height: 60, duration: 0.3 });
+      gsap.to(header, { height: isMobile ? 'auto' : 60, duration: 0.3 });
     }
   }
 
