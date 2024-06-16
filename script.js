@@ -134,9 +134,10 @@ function scrollFunction() {
   );
 
   const isMobile = window.innerWidth <= 500;
-  const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+  let scrollPosition = window.scrollY || document.documentElement.scrollTop;
+  scrollPosition = isMobile ? scrollPosition > 20 : scrollPosition > 50;
 
-  if (scrollPosition > 50) {
+  if (scrollPosition) {
     gsap.to(header, {
       padding: '10px 20px',
       height: 60,
