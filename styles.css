@@ -1,6 +1,10 @@
 body {
   margin: 0;
   background: #9f815f;
+
+  &.no-scroll {
+    overflow-y: hidden;
+  }
 }
 ::-webkit-scrollbar {
   width: 12px;
@@ -118,7 +122,7 @@ header {
 }
 
 #fotos {
-  margin-top: 150px;
+  margin-top: 120px;
   padding: 10px;
   background: #9f815f;
   box-shadow: 0px 50px 100px 5px rgba(0, 0, 0, 0.2) inset;

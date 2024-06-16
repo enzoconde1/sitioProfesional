@@ -134,13 +134,14 @@ function scrollFunction() {
   );
 
   let scrollPosition = window.scrollY || document.documentElement.scrollTop;
-  scrollPosition = isMobile ? scrollPosition > 0.1 : scrollPosition > 10;
+  let isScrolled = isMobile ? scrollPosition > 0.1 : scrollPosition > 10;
 
-  if (scrollPosition) {
+  if (isScrolled) {
     gsap.to(header, {
       height: isMobile ? 50 : 80,
       duration: 0.3,
       onComplete: () => {
+        header.style.padding = isMobile ? '10px' : '0';
         header.style.flexDirection = 'row';
         header.style.alignItems = isMobile ? 'unset' : 'center';
         title.style.marginTop = '0';
@@ -160,6 +161,7 @@ function scrollFunction() {
       height: 700,
       duration: 0.3,
       onComplete: () => {
+        header.style.padding = '0';
         header.style.flexDirection = 'column';
         title.style.marginTop = '10px';
         header.style.alignItems = 'center';
@@ -192,31 +194,6 @@ function scrollToSection(sectionId) {
     behavior: 'smooth',
   });
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-  gsap.registerPlugin(ScrollTrigger);
-
-  const header = document.querySelector('header');
-
-  function adjustHeaderHeight() {
-    const scrollPosition = window.scrollY;
-    if (scrollPosition === 0) {
-      gsap.to(header, { height: 700, duration: 0.3 });
-    } else {
-      gsap.to(header, { height: isMobile ? 50 : 80, duration: 0.3 });
-    }
-  }
-
-  window.addEventListener('scroll', adjustHeaderHeight);
-
-  // ScrollTrigger para animación suave
-  ScrollTrigger.create({
-    start: 0,
-    end: 1,
-    onEnter: () => adjustHeaderHeight(),
-    onLeaveBack: () => adjustHeaderHeight(),
-  });
-});
 
 // MOBILE NAV
 document.addEventListener('DOMContentLoaded', function () {
