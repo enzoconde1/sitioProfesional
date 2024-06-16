@@ -189,15 +189,9 @@ function scrollFunction() {
 // SCROLL TO SECTION
 function scrollToSection(sectionId) {
   const section = document.getElementById(sectionId);
-  const headerHeight = document.getElementById('header').offsetHeight;
-
-  const sectionPosition =
-    headerHeight < 600
-      ? section.offsetTop - headerHeight
-      : section.offsetTop - 65;
 
   window.scrollTo({
-    top: sectionPosition,
+    top: section.offsetTop - 65,
     behavior: 'smooth',
   });
 }
