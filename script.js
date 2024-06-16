@@ -141,7 +141,6 @@ function scrollFunction() {
       height: isMobile ? '50px' : '60px',
       duration: 0.3,
       onComplete: () => {
-        header.style.padding = '10px 20px';
         header.style.flexDirection = 'row';
         title.style.marginTop = '0';
         title.style.fontSize = isMobile ? '40px' : '50px';
@@ -161,7 +160,6 @@ function scrollFunction() {
       duration: 0.3,
       onComplete: () => {
         header.style.height = '700px';
-        header.style.padding = '0';
         header.style.flexDirection = 'column';
         title.style.marginTop = '10px';
         title.style.fontSize = isMobile ? '60px' : '80px';
