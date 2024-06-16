@@ -1,6 +1,6 @@
 var facebookMetaToken =
   'IGQWRQRmRCMEoxSEY2Y1lYQW4tVEZA2N3BQSWtjRWhwRExBbFBLWUM4TGwzRWUzZAzNsWDlPbE1qVnFWZAVI0SzBpRFg3N2hGV0szTjNhQUozZAHYwU1NDSnFDQndxbU9KWTN5WVBGZADlBVHhJU2dLOXJzcDZArZAXVSeUUZD';
-
+const isMobile = window.innerWidth <= 500;
 // INSTAFEED - CARGA FOTOS  DE INSTAGRAM
 
 var feed = new Instafeed({
@@ -133,10 +133,9 @@ function scrollFunction() {
     'nav.desktop-nav ul li:first-child a'
   );
 
-  const isMobile = window.innerWidth <= 500;
   let scrollPosition = window.scrollY || document.documentElement.scrollTop;
   console.log(scrollPosition);
-  scrollPosition = isMobile ? scrollPosition > 2 : scrollPosition > 50;
+  scrollPosition = isMobile ? scrollPosition > 1 : scrollPosition > 10;
 
   if (scrollPosition) {
     gsap.to(header, {
@@ -206,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (scrollPosition === 0) {
       gsap.to(header, { height: 700, duration: 0.3 });
     } else {
-      gsap.to(header, { height: 2, duration: 0.3 });
+      gsap.to(header, { height: 60, duration: 0.3 });
     }
   }
 
