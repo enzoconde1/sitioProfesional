@@ -335,12 +335,8 @@ footer .social-icons img {
 }
 
 @media (max-width: 500px) {
-  .logo-container-der {
-    margin-left: 10px;
-    display: block;
-  }
-  .logo-container-izq {
-    display: none;
+  .logo-container {
+    margin-left: 15px;
   }
   .logo {
     width: 40px;
