@@ -59,6 +59,25 @@ header {
   line-height: normal;
   text-transform: uppercase;
 }
+.headerContact {
+  color: #000000;
+  font-family: 'Inter', light;
+  font-size: 20px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.headerContact p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin: 0;
+}
+.headerContact img {
+  height: 30px;
+  margin-right: 10px;
+}
+
 .logo-container {
   justify-content: center;
   align-items: center;
@@ -311,6 +330,7 @@ footer p {
 header .social-icons {
   display: flex;
   margin-top: 20px;
+  margin-bottom: 60px;
 }
 
 header .social-icons img {
