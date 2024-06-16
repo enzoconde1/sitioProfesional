@@ -138,10 +138,12 @@ function scrollFunction() {
 
   if (scrollPosition) {
     gsap.to(header, {
-      height: isMobile ? '50px' : '80px',
+      height: isMobile ? 50 : 80,
       duration: 0.3,
       onComplete: () => {
+        header.style.padding = '10px';
         header.style.flexDirection = 'row';
+        header.style.alignItems = 'unset';
         title.style.marginTop = '0';
         title.style.fontSize = isMobile ? '40px' : '50px';
         nav.style.marginLeft = '15px';
@@ -156,12 +158,14 @@ function scrollFunction() {
     inicioLinkA.style.display = 'block';
   } else {
     gsap.to(header, {
-      height: '700px',
+      padding: '10px',
+      height: 700,
       duration: 0.3,
       onComplete: () => {
-        header.style.height = '700px';
+        header.style.padding = '0';
         header.style.flexDirection = 'column';
         title.style.marginTop = '10px';
+        header.style.alignItems = 'center';
         title.style.fontSize = isMobile ? '60px' : '80px';
         nav.style.marginLeft = '0';
         logo.style.marginRight = '0';
@@ -200,9 +204,9 @@ document.addEventListener('DOMContentLoaded', function () {
   function adjustHeaderHeight() {
     const scrollPosition = window.scrollY;
     if (scrollPosition === 0) {
-      gsap.to(header, { height: '700px', duration: 0.3 });
+      gsap.to(header, { height: 700, duration: 0.3 });
     } else {
-      gsap.to(header, { height: isMobile ? 'auto' : '80px', duration: 0.3 });
+      gsap.to(header, { height: isMobile ? 50 : 80, duration: 0.3 });
     }
   }
 
