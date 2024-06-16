@@ -161,7 +161,7 @@ function scrollFunction() {
       duration: 0.3,
       onComplete: () => {
         header.style.height = '700px';
-        header.style.padding = '10px';
+        header.style.padding = '0';
         header.style.flexDirection = 'column';
         title.style.marginTop = '10px';
         title.style.fontSize = isMobile ? '60px' : '80px';
