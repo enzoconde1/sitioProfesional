@@ -145,7 +145,6 @@ function scrollFunction() {
         header.style.padding = isMobile ? '10px' : '0';
         header.style.flexDirection = 'row';
         header.style.alignItems = isMobile ? 'unset' : 'center';
-        title.style.marginTop = '0';
         title.style.fontSize = isMobile ? '40px' : '50px';
         nav.style.marginLeft = '15px';
         logo.style.marginRight = '15px';
@@ -165,7 +164,6 @@ function scrollFunction() {
       onComplete: () => {
         header.style.padding = '0';
         header.style.flexDirection = 'column';
-        title.style.marginTop = '10px';
         header.style.alignItems = 'center';
         title.style.fontSize = isMobile ? '60px' : '80px';
         nav.style.marginLeft = '0';
