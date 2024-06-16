@@ -90,7 +90,13 @@ header {
   text-decoration: none;
   position: relative;
 }
-
+.desktop-nav ul li:first-child a {
+  display: none;
+  transition: all 0.1s ease; 
+}
+.desktop-nav ul li:first-child {
+  margin-right: 0;
+}
 .desktop-nav ul li:not(:last-child) {
   margin-right: 20px; /* Ajusta este valor según el espacio que necesites */
 }
@@ -103,7 +109,7 @@ header {
   width: 100%;
   height: 2px;
   background-color: rgb(0, 0, 0);
-  animation: underline 0.3s forwards;
+  animation: underline 0.5s forwards;
 }
 @keyframes underline {
   from {
@@ -113,6 +119,7 @@ header {
     width: 100%;
   }
 }
+
 #fotos {
   margin-top: 150px;
   padding: 30px;

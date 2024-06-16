@@ -126,13 +126,18 @@ function scrollFunction() {
   const logo = document.querySelector('.logo');
   const nav = document.querySelector('nav');
   const socialIcons = document.querySelector('.social-icons');
+  const inicioLinkLi = document.querySelector(
+    'nav.desktop-nav ul li:first-child'
+  );
+  const inicioLinkA = document.querySelector(
+    'nav.desktop-nav ul li:first-child a'
+  );
 
   const isMobile = window.innerWidth <= 500;
+  const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+
   if (!isMobile) {
-    if (
-      document.body.scrollTop > 50 ||
-      document.documentElement.scrollTop > 50
-    ) {
+    if (scrollPosition > 50) {
       gsap.to(header, {
         padding: '10px 20px',
         height: 60,
@@ -142,11 +147,15 @@ function scrollFunction() {
           header.style.flexDirection = 'row';
           title.style.fontSize = '50px';
           nav.style.marginLeft = '15px';
+          logo.style.marginRight = '15px';
           logo.style.width = '60px';
           logo.style.height = '60px';
           socialIcons.style.display = 'none';
         },
       });
+
+      inicioLinkLi.style.marginRight = '20px';
+      inicioLinkA.style.display = 'block';
     } else {
       gsap.to(header, {
         height: 700,
@@ -158,11 +167,15 @@ function scrollFunction() {
           header.style.flexDirection = 'column';
           title.style.fontSize = '80px';
           nav.style.marginLeft = '0';
+          logo.style.marginRight = '0';
           logo.style.width = '140px';
           logo.style.height = '140px';
           socialIcons.style.display = 'flex';
         },
       });
+
+      inicioLinkLi.style.marginRight = '0';
+      inicioLinkA.style.display = 'none';
     }
   }
 }
@@ -171,8 +184,7 @@ function scrollFunction() {
 function scrollToSection(sectionId) {
   const section = document.getElementById(sectionId);
   const headerHeight = document.getElementById('header').offsetHeight;
-  console.log(section.offsetTop);
-  console.log(headerHeight);
+
   const sectionPosition =
     headerHeight < 600
       ? section.offsetTop - headerHeight
