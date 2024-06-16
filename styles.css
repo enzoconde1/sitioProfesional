@@ -345,14 +345,13 @@ header .social-icons img {
 }
 
 header .social-icons a {
-  margin-right: 15px; /* Ajusta el valor según el espacio que necesites */
+  margin-right: 15px; 
 }
 
 header .social-icons a:last-child {
-  margin-right: 0; /* Elimina el margen derecho del último ícono */
+  margin-right: 0; 
 }
 
-/* Estilos para los íconos sociales en el footer */
 footer .social-icons {
   display: flex;
   margin-right: 30px;
@@ -382,8 +381,8 @@ footer .social-icons img {
     display: none;
   }
   .mobile-nav-toggle {
-    display: block;
     cursor: pointer;
+    transition: transform 0.3s ease;
   }
   .mobile-nav-toggle #menu-icon {
     transition: transform 0.3s ease;
@@ -435,9 +434,6 @@ footer .social-icons img {
   }
   .mobile-nav.active {
     display: block;
-  }
-  .tortascontainer img {
-    height: 160px;
   }
   .aboutmetxt1 {
     margin-left: 10px;

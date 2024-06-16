@@ -125,6 +125,7 @@ function scrollFunction() {
   const title = document.querySelector('.title');
   const logo = document.querySelector('.logo');
   const nav = document.querySelector('nav');
+  const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
   const socialIcons = document.querySelector('.social-icons');
   const headerContacts = document.querySelectorAll('.headerContact');
   const inicioLinkLi = document.querySelector(
@@ -146,7 +147,8 @@ function scrollFunction() {
         header.style.flexDirection = 'row';
         header.style.alignItems = isMobile ? 'unset' : 'center';
         title.style.fontSize = isMobile ? '40px' : '50px';
-        nav.style.marginLeft = '15px';
+        mobileNavToggle.style.display = isMobile ? 'block' : 'none';
+        nav.style.marginLeft = isMobile ? '0' : '15px';
         logo.style.marginRight = '15px';
         logo.style.width = isMobile ? '45px' : '60px';
         logo.style.height = isMobile ? '45px' : '60px';
@@ -166,6 +168,7 @@ function scrollFunction() {
         header.style.flexDirection = 'column';
         header.style.alignItems = 'center';
         title.style.fontSize = isMobile ? '60px' : '80px';
+        mobileNavToggle.style.display = 'none';
         nav.style.marginLeft = '0';
         logo.style.marginRight = '0';
         logo.style.width = '140px';
