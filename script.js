@@ -135,7 +135,8 @@ function scrollFunction() {
 
   const isMobile = window.innerWidth <= 500;
   let scrollPosition = window.scrollY || document.documentElement.scrollTop;
-  scrollPosition = isMobile ? scrollPosition > 20 : scrollPosition > 50;
+  console.log(scrollPosition);
+  scrollPosition = isMobile ? scrollPosition > 2 : scrollPosition > 50;
 
   if (scrollPosition) {
     gsap.to(header, {
@@ -205,7 +206,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (scrollPosition === 0) {
       gsap.to(header, { height: 700, duration: 0.3 });
     } else {
-      gsap.to(header, { height: 20, duration: 0.3 });
+      gsap.to(header, { height: 2, duration: 0.3 });
     }
   }
 
