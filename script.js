@@ -194,7 +194,7 @@ function scrollToSection(sectionId) {
   const sectionPosition =
     headerHeight < 600
       ? section.offsetTop - headerHeight
-      : section.offsetTop - 70;
+      : section.offsetTop - 65;
 
   window.scrollTo({
     top: sectionPosition,
