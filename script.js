@@ -138,7 +138,7 @@ function scrollFunction() {
 
   if (scrollPosition) {
     gsap.to(header, {
-      height: isMobile ? '50px' : '60px',
+      height: isMobile ? '50px' : '80px',
       duration: 0.3,
       onComplete: () => {
         header.style.flexDirection = 'row';
@@ -200,9 +200,9 @@ document.addEventListener('DOMContentLoaded', function () {
   function adjustHeaderHeight() {
     const scrollPosition = window.scrollY;
     if (scrollPosition === 0) {
-      gsap.to(header, { height: 700, duration: 0.3 });
+      gsap.to(header, { height: '700px', duration: 0.3 });
     } else {
-      gsap.to(header, { height: isMobile ? 'auto' : 60, duration: 0.3 });
+      gsap.to(header, { height: isMobile ? 'auto' : '80px', duration: 0.3 });
     }
   }
 
