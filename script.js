@@ -163,7 +163,7 @@ function scrollFunction() {
     inicioLinkA.style.display = 'block';
   } else {
     gsap.to(header, {
-      height: 700,
+      height: 1000,
       duration: 0.3,
       onComplete: () => {
         header.style.padding = '0';
