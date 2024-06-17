@@ -452,6 +452,12 @@ footer .social-icons img {
   height: 40px;
 }
 
+@media (max-width: 1300px) {
+  header {
+    height: 700px;
+  }
+}
+
 @media (max-width: 500px) {
   .logo {
     width: 140px;
