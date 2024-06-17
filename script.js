@@ -230,3 +230,41 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+let currentSlideIndex = [0, 0, 0];
+
+function showSlide(categoryIndex, slideIndex) {
+  const carousel = document.getElementById(`carousel${categoryIndex}`);
+  const slides = carousel.getElementsByClassName('slide');
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].classList.remove('active');
+  }
+  slides[slideIndex].classList.add('active');
+}
+
+function nextSlide(categoryIndex) {
+  const carousel = document.getElementById(`carousel${categoryIndex}`);
+  const slides = carousel.getElementsByClassName('slide');
+  currentSlideIndex[categoryIndex - 1]++;
+  if (currentSlideIndex[categoryIndex - 1] >= slides.length) {
+    currentSlideIndex[categoryIndex - 1] = 0;
+  }
+  showSlide(categoryIndex, currentSlideIndex[categoryIndex - 1]);
+}
+
+function prevSlide(categoryIndex) {
+  const carousel = document.getElementById(`carousel${categoryIndex}`);
+  const slides = carousel.getElementsByClassName('slide');
+  currentSlideIndex[categoryIndex - 1]--;
+  if (currentSlideIndex[categoryIndex - 1] < 0) {
+    currentSlideIndex[categoryIndex - 1] = slides.length - 1;
+  }
+  showSlide(categoryIndex, currentSlideIndex[categoryIndex - 1]);
+}
+
+// Inicializar el primer slide como activo
+document.addEventListener('DOMContentLoaded', () => {
+  showSlide(1, 0);
+  showSlide(2, 0);
+  showSlide(3, 0);
+});

@@ -36,6 +36,7 @@
             <a onclick="scrollToSection('header')">INICIO</a>
           </li>
           <li><a onclick="scrollToSection('fotos')">FOTOS</a></li>
+          <li><a onclick="scrollToSection('productos')">PRODUCTOS</a></li>
           <li><a onclick="scrollToSection('aboutme')">SOBRE MI</a></li>
           <li><a onclick="scrollToSection('contact')">CONTACTO</a></li>
         </ul>
@@ -69,6 +70,7 @@
             <a onclick="scrollToSection('header')">INICIO</a>
           </li>
           <li><a onclick="scrollToSection('fotos')">FOTOS</a></li>
+          <li><a onclick="scrollToSection('productos')">PRODUCTOS</a></li>
           <li><a onclick="scrollToSection('aboutme')">SOBRE MI</a></li>
           <li><a onclick="scrollToSection('contact')">CONTACTO</a></li>
         </ul>
@@ -86,6 +88,44 @@
       <section id="fotos">
         <h2 class="subtitle">Creaciones</h2>
         <div id="instafeed"></div>
+      </section>
+
+      <section id="productos">
+        <label class="subtitle">Productos</h2>          
+        <div class="gallery">
+          <div class="category">
+            <h2>Tortas</h2>
+            <div class="carousel" id="carousel1">
+              <button class="prev" onclick="prevSlide(1)">&#10094;</button>
+              <img src="img/torta1.jpg" class="slide" />
+              <img src="image2.jpg" class="slide" />
+              <img src="image3.jpg" class="slide" />
+              <button class="next" onclick="nextSlide(1)">&#10095;</button>
+            </div>
+          </div>
+          <div class="category">
+            <h2>Cuadrados</h2>
+            <div class="carousel" id="carousel2">
+              <button class="prev" onclick="prevSlide(2)">&#10094;</button>
+              <img src="img/cuadrado1.jpg" class="slide" />
+              <img src="img/cuadrado2.jpg" class="slide" />
+              <img src="img/cuadrado3.jpg" class="slide" />
+              <img src="img/cuadrado4.jpg" class="slide" />
+              <img src="img/cuadrado5.jpg" class="slide" />
+              <button class="next" onclick="nextSlide(2)">&#10095;</button>
+            </div>
+          </div>
+          <div class="category">
+            <h2>Otros</h2>
+            <div class="carousel" id="carousel3">
+              <button class="prev" onclick="prevSlide(3)">&#10094;</button>
+              <img src="img/bocado1.jpg" class="slide" />
+              <img src="img/bocado2.jpg" class="slide" />
+              <img src="img/bocado3.jpg" class="slide" />
+              <button class="next" onclick="nextSlide(3)">&#10095;</button>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!--SOBRE MI-->
