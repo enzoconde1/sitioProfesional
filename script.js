@@ -139,6 +139,7 @@ function scrollFunction() {
 
   let scrollPosition = window.scrollY || document.documentElement.scrollTop;
   let isScrolled = isMobile ? scrollPosition > 0.1 : scrollPosition > 10;
+  console.log(window.innerHeight);
 
   if (isScrolled) {
     gsap.to(header, {
