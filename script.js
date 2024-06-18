@@ -2,8 +2,8 @@ var facebookMetaToken =
   'IGQWRQRmRCMEoxSEY2Y1lYQW4tVEZA2N3BQSWtjRWhwRExBbFBLWUM4TGwzRWUzZAzNsWDlPbE1qVnFWZAVI0SzBpRFg3N2hGV0szTjNhQUozZAHYwU1NDSnFDQndxbU9KWTN5WVBGZADlBVHhJU2dLOXJzcDZArZAXVSeUUZD';
 const isMobile = window.innerWidth <= 500;
 const isMobile2 = window.innerWidth <= 1300;
-// INSTAFEED - CARGA FOTOS  DE INSTAGRAM
 
+// INSTAFEED - CARGA FOTOS  DE INSTAGRAM
 var feed = new Instafeed({
   get: 'user',
   accessToken: facebookMetaToken,
@@ -139,7 +139,6 @@ function scrollFunction() {
 
   let scrollPosition = window.scrollY || document.documentElement.scrollTop;
   let isScrolled = isMobile ? scrollPosition > 0.1 : scrollPosition > 10;
-  console.log(window.innerHeight);
 
   if (isScrolled) {
     gsap.to(header, {
